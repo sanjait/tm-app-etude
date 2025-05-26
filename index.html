@@ -7,19 +7,54 @@
 </head>
 <body>
     <header>
-	<h1>Muchacho's To-Do List Manager</h1>
+        <h1>Muchacho's To-Do List Manager</h1>
         <p>List, review, isolate, kill</p>
     </header>
 
     <main>
         <section class="task-input-section">
             <h2>Add New Task</h2>
-            <!-- Form will go here -->
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Task Title:</label>
+                    <input 
+                        type="text" 
+                        id="task-title" 
+                        name="task-title" 
+                        placeholder="Enter your task..." 
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-priority">Priority:</label>
+                    <select id="task-priority" name="task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Add Task</button>
+            </form>
         </section>
 
         <section class="task-display-section">
             <h2>Your Tasks</h2>
-            <!-- Tasks will appear here -->
+            <div id="task-container">
+                <!-- Tasks will appear here dynamically -->
+                <!-- Example task structure (remove this later): -->
+                <article class="task-item">
+                    <div class="task-content">
+                        <h3 class="task-title">Example Task</h3>
+                        <span class="task-priority priority-medium">Medium</span>
+                    </div>
+                    <div class="task-actions">
+                        <button class="complete-btn">Complete</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 </body>
